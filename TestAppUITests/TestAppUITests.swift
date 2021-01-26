@@ -39,16 +39,4 @@ class TestAppUITests: XCTestCase {
             }
         }
     }
-    
-    func testTextChange() throws {
-        let app = XCUIApplication()
-        app.launch()
-        
-        let button = app.buttons["Button"].firstMatch
-        
-        button.tap()
-        
-        XCTAssertEqual(app.staticTexts.element.label, "No!!!!!!!!")
-        
-    }
 }
