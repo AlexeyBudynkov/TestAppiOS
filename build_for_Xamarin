@@ -1,0 +1,2 @@
+rm -rf DerivedData
+xcrun xcodebuild -workspace TestApp.xcworkspace -configuration ConfiguratonWithCalabashLinked -sdk iphonesimulator ARCHS="x86_64" VALID_ARCHS="x86_64" ONLY_ACTIVE_ARCH=NO -scheme TestApp -derivedDataPath DerivedData build

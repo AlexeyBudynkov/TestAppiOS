@@ -1,0 +1,2 @@
+rm -rf DerivedData
+xcrun xcodebuild build-for-testing -configuration Debug -workspace TestApp.xcworkspace -sdk iphoneos -scheme TestApp -derivedDataPath DerivedData -allowProvisioningUpdates
