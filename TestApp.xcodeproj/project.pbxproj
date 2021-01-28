@@ -670,6 +670,35 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-ObjC",
+					"-framework",
+					"\"CFNetwork\"",
+					"-force_load",
+					"$(PROJECT_DIR)/calabash.framework/calabash",
+					"-framework",
+					"\"AppCenter\"",
+					"-framework",
+					"\"AppCenterAnalytics\"",
+					"-framework",
+					"\"AppCenterCrashes\"",
+					"-framework",
+					"\"AppCenterDistribute\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"SafariServices\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.myCompany.TestApp8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
