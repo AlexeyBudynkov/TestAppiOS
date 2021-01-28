@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3BEABA202496F7AA978A910A /* Pods_TestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738846F3B246F72EFFEA1056 /* Pods_TestAppTests.framework */; };
 		470CE16E25C2E97D0079D73F /* calabash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470CE16D25C2E97D0079D73F /* calabash.framework */; };
+		470CE17625C307360079D73F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470CE17525C307360079D73F /* CFNetwork.framework */; };
 		47148ABB25C1964200C04E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148ABA25C1964200C04E3C /* AppDelegate.swift */; };
 		47148ABD25C1964200C04E3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148ABC25C1964200C04E3C /* SceneDelegate.swift */; };
 		47148ABF25C1964200C04E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148ABE25C1964200C04E3C /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		0D12D9998A03AAFA1D23D119 /* Pods-TestAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TestAppTests/Pods-TestAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D0A2DF3EC66ECA2CAAB4B28 /* Pods-TestApp-TestAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp-TestAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestApp-TestAppUITests/Pods-TestApp-TestAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		470CE16D25C2E97D0079D73F /* calabash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = calabash.framework; sourceTree = "<group>"; };
+		470CE17525C307360079D73F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		47148AB725C1964200C04E3C /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47148ABA25C1964200C04E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47148ABC25C1964200C04E3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				470CE17625C307360079D73F /* CFNetwork.framework in Frameworks */,
 				470CE16E25C2E97D0079D73F /* calabash.framework in Frameworks */,
 				A85EA1148DE0B7334114A5FA /* Pods_TestApp.framework in Frameworks */,
 			);
@@ -177,6 +180,7 @@
 		F0BF551F8527F85DABBF46C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				470CE17525C307360079D73F /* CFNetwork.framework */,
 				470CE16D25C2E97D0079D73F /* calabash.framework */,
 				71B7024625A86CB83CEDB128 /* Pods_TestApp.framework */,
 				D079FEE5CD179D5C2CAFE129 /* Pods_TestApp_TestAppUITests.framework */,
@@ -606,6 +610,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)\"",
 				);
 				INFOPLIST_FILE = TestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
@@ -637,8 +642,6 @@
 					"-weak_framework",
 					"\"SafariServices\"",
 					"-ObjC",
-					"-framework",
-					CFNetwork,
 					"-force_load",
 					"\"$(SOURCE_ROOT)/calabash.framework/calabash\"",
 				);
@@ -659,6 +662,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)\"",
 				);
 				INFOPLIST_FILE = TestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
