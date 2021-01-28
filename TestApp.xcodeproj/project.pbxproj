@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3BEABA202496F7AA978A910A /* Pods_TestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738846F3B246F72EFFEA1056 /* Pods_TestAppTests.framework */; };
 		470CE16E25C2E97D0079D73F /* calabash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470CE16D25C2E97D0079D73F /* calabash.framework */; };
-		470CE16F25C2E97D0079D73F /* calabash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 470CE16D25C2E97D0079D73F /* calabash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		47148ABB25C1964200C04E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148ABA25C1964200C04E3C /* AppDelegate.swift */; };
 		47148ABD25C1964200C04E3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148ABC25C1964200C04E3C /* SceneDelegate.swift */; };
 		47148ABF25C1964200C04E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148ABE25C1964200C04E3C /* ViewController.swift */; };
@@ -46,7 +45,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				470CE16F25C2E97D0079D73F /* calabash.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
