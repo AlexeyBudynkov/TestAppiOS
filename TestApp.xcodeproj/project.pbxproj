@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3BEABA202496F7AA978A910A /* Pods_TestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738846F3B246F72EFFEA1056 /* Pods_TestAppTests.framework */; };
 		470CE16E25C2E97D0079D73F /* calabash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470CE16D25C2E97D0079D73F /* calabash.framework */; };
-		470CE17625C307360079D73F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470CE17525C307360079D73F /* CFNetwork.framework */; };
 		47148ABB25C1964200C04E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148ABA25C1964200C04E3C /* AppDelegate.swift */; };
 		47148ABD25C1964200C04E3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148ABC25C1964200C04E3C /* SceneDelegate.swift */; };
 		47148ABF25C1964200C04E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148ABE25C1964200C04E3C /* ViewController.swift */; };
@@ -85,7 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				470CE17625C307360079D73F /* CFNetwork.framework in Frameworks */,
 				470CE16E25C2E97D0079D73F /* calabash.framework in Frameworks */,
 				A85EA1148DE0B7334114A5FA /* Pods_TestApp.framework in Frameworks */,
 			);
@@ -623,6 +621,11 @@
 					"-l\"c++\"",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
+					"-ObjC",
+					"-framework",
+					"\"CFNetwork\"",
+					"-force_load",
+					"$(PROJECT_DIR)/calabash.framework/calabash",
 					"-framework",
 					"\"AppCenter\"",
 					"-framework",
@@ -641,9 +644,6 @@
 					"\"UIKit\"",
 					"-weak_framework",
 					"\"SafariServices\"",
-					"-ObjC",
-					"-force_load",
-					"\"$(SOURCE_ROOT)/calabash.framework/calabash\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.myCompany.TestApp8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
