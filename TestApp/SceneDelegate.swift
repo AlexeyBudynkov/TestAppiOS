@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AppTrackingTransparency
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,6 +19,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { status in
+                print("status=\(status)")
+            }
+        } else {
+            print("iOS Not suppoeted by requestTrackingAuthorization")
+            // Fallback on earlier versions
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
