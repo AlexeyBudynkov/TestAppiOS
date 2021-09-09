@@ -11,6 +11,8 @@ import AppTrackingTransparency
 import CoreLocation
 
 class ViewController: UIViewController {
+    
+    lazy var locationManager = CLLocationManager()
 
     @IBOutlet weak var textFiels: UITextField!
     override func viewDidLoad() {
@@ -29,10 +31,84 @@ class ViewController: UIViewController {
         textFiels.text = "hao!!!"
         
         
+        locationManager.delegate = self
     }
 
 
 }
+
+extension ViewController: CLLocationManagerDelegate {
+    
+    func checkLocationAccuracyAllowed() {
+        switch locationManager.accuracyAuthorization {
+        case .reducedAccuracy:
+            print("approximate location")
+        case .fullAccuracy:
+            print("accurate location")
+        @unknown default:
+            print("unknown type")
+        }
+        
+        locationManager.startUpdatingLocation()
+    }
+    
+    func requestLocationAuth() {
+
+        locationManager.requestAlwaysAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyReduced
+        
+        switch locationManager.authorizationStatus {
+        case .authorizedAlways:
+            print("authorized always")
+            checkLocationAccuracyAllowed()
+        case .authorizedWhenInUse:
+            print("authorized when in use")
+            checkLocationAccuracyAllowed()
+        case .notDetermined:
+            print("not determined")
+        case .restricted:
+            print("restricted")
+        case .denied:
+            print("denied")
+        default:
+            print("other")
+        }
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+         guard let location = locations.last else { return }
+         print(location.coordinate.latitude)
+         print(location.coordinate.longitude)
+    }
+     
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+
+//         let status = manager.authorizationStatus
+//         let accuracyStatus = manager.accuracyAuthorization
+//
+//         if(status == .authorizedWhenInUse || status == .authorizedAlways){
+//
+//             if accuracyStatus == CLAccuracyAuthorization.reducedAccuracy{
+//                 locationManager.requestTemporaryFullAccuracyAuthorization(withPurposeKey: "wantAccurateLocation", completion: { [self]
+//                     error in
+//
+//                     if locationManager.accuracyAuthorization == .fullAccuracy{
+//                         print("Full Accuracy Location Access Granted Temporarily")
+//                     }
+//                     else{
+//                         print("Approx Location As User Denied Accurate Location Access")
+//                     }
+//                     locationManager.startUpdatingLocation()
+//                 })
+//             }
+//         }
+//         else{
+             requestLocationAuth()
+//         }
+     }
+}
+
 //
 //import UIKit
 //import WebKit
