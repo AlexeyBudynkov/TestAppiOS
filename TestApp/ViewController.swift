@@ -34,9 +34,9 @@ class ViewController: UIViewController {
         locationManager.delegate = self
     }
 
-
 }
 
+//location notification
 extension ViewController: CLLocationManagerDelegate {
     
     func checkLocationAccuracyAllowed() {
@@ -107,6 +107,23 @@ extension ViewController: CLLocationManagerDelegate {
              requestLocationAuth()
 //         }
      }
+}
+
+//draw a point on a screen on tap
+extension ViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first{
+            
+            let position = touch.location(in: view)
+
+            // View the x and y coordinates
+            let dot = UIView(frame: CGRect(x: position.x, y: position.y, width: 10, height: 10))
+            dot.backgroundColor = .red
+            view.addSubview(dot)
+            print(position)
+            
+        }
+    }
 }
 
 //
