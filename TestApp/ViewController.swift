@@ -39,6 +39,7 @@ class ViewController: UIViewController {
 //location notification
 extension ViewController: CLLocationManagerDelegate {
     
+    @available(iOS 14.0, *)
     func checkLocationAccuracyAllowed() {
         switch locationManager.accuracyAuthorization {
         case .reducedAccuracy:
@@ -52,6 +53,7 @@ extension ViewController: CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
     }
     
+    @available(iOS 14.0, *)
     func requestLocationAuth() {
 
         locationManager.requestAlwaysAuthorization()
@@ -82,6 +84,7 @@ extension ViewController: CLLocationManagerDelegate {
          print(location.coordinate.longitude)
     }
      
+    @available(iOS 14.0, *)
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
 
 //         let status = manager.authorizationStatus
