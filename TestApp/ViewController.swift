@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     lazy var locationManager = CLLocationManager()
 
     @IBOutlet weak var textFiels: UITextField!
+
+    var colorCounter = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -114,6 +117,7 @@ extension ViewController: CLLocationManagerDelegate {
 
 //draw a point on a screen on tap
 extension ViewController {
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first{
             
@@ -121,7 +125,8 @@ extension ViewController {
 
             // View the x and y coordinates
             let dot = UIView(frame: CGRect(x: position.x, y: position.y, width: 10, height: 10))
-            dot.backgroundColor = .red
+            colorCounter += 1
+            dot.backgroundColor = colorCounter%2==0 ? .red : .blue
             view.addSubview(dot)
             print(position)
             
