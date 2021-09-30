@@ -29,6 +29,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("iOS Not suppoeted by requestTrackingAuthorization")
             // Fallback on earlier versions
         }
+        
+//        DispatchQueue.main.async {
+//            let statusBar = UIView(frame: (UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame)!)
+//            UIApplication.shared.keyWindow?.addSubview(statusBar)
+//            statusBar.backgroundColor = .red
+//        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

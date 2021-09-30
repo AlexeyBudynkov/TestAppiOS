@@ -1,0 +1,1 @@
+appcenter test run uitest --app "v-abudynkov-microsoft.com/TestApp" --devices 52daea6a --app-path ~/Documents/Apple_apps/build/TestApp.ipa --test-series "master" --locale "en_US" --build-dir ~/Documents/Apple_apps/TestAppiOSXamarin/TestAppiOSXamarin/bin/Debug/
