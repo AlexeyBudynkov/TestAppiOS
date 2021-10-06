@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         
         
         locationManager.delegate = self
+        
     }
 
 }
@@ -118,13 +119,52 @@ extension ViewController: CLLocationManagerDelegate {
 //draw a point on a screen on tap
 extension ViewController {
     
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //WindowsParser.rotate()
+
+        ////query to calabash
+        let arguments = "{\"query\":\"* marked:'hao!!!'\",\"operation\":{\"method_name\":\"query\",\"arguments\":[]}}"
+        let data = LPJSONUtils.deserializeDictionary(arguments)
+        var parser = UIScriptParser(object: data!["query"]!)
+        parser!.parse()
+        let tokens = parser?.parsedTokens()
+        let allWindows = LPTouchUtils.applicationWindows();
+        let result = parser!.eval(with: allWindows)
+
+        let operation = data!["operation"]!
+        print(result)
+
+        parser = nil
+
+        var resultArray:[Any] = []
+
+        do {
+            resultArray = try WindowsParser.applyOperation(operation as! [AnyHashable : Any], toViews: result)
+        }
+        catch {
+            print("error")
+        }
+
+        print(resultArray)
+        let dict:[AnyHashable : Any] = resultArray[0] as! [AnyHashable : Any]
+
+        let rect:[AnyHashable : Any] = dict["rect"] as! [AnyHashable : Any]
+
+        let y = rect["y"] as! Int
+        let x = rect["x"] as! Int
+        ////
+        
         if let touch = touches.first{
             
             let position = touch.location(in: view)
 
             // View the x and y coordinates
             let dot = UIView(frame: CGRect(x: position.x, y: position.y, width: 10, height: 10))
+//            let dot = UIView(frame: CGRect(x: 50, y: 50, width: 10, height: 10))
+//            let dot = UIView(frame: CGRect(x: 330, y: 615, width: 10, height: 10))
+//            let dot = UIView(frame: CGRect(x: x, y: y, width: 10, height: 10))
+            
             colorCounter += 1
             dot.backgroundColor = colorCounter%2==0 ? .red : .blue
             view.addSubview(dot)

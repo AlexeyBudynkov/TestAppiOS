@@ -19,6 +19,7 @@
 		47414BB027061A7300842479 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47414BAF27061A7300842479 /* PushKit.framework */; };
 		475880B226382B6D00B9363C /* AppTrackingPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475880B126382B6D00B9363C /* AppTrackingPermission.swift */; };
 		47ACCC83270625D700AE8A3E /* calabash.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47ACCC82270625D700AE8A3E /* calabash.xcframework */; };
+		47EA59B0270AE4AE007E441B /* WindowsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EA59AF270AE4AE007E441B /* WindowsParser.m */; };
 		95878B99CA568EFCD06334CD /* Pods_TestApp_TestAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D079FEE5CD179D5C2CAFE129 /* Pods_TestApp_TestAppUITests.framework */; };
 		A85EA1148DE0B7334114A5FA /* Pods_TestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B7024625A86CB83CEDB128 /* Pods_TestApp.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,9 @@
 		474CDDAD2632A9B100E920FC /* TestApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestApp.entitlements; sourceTree = "<group>"; };
 		475880B126382B6D00B9363C /* AppTrackingPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingPermission.swift; sourceTree = "<group>"; };
 		47ACCC82270625D700AE8A3E /* calabash.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = calabash.xcframework; sourceTree = "<group>"; };
+		47EA59AE270AE4AE007E441B /* TestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		47EA59AF270AE4AE007E441B /* WindowsParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowsParser.m; sourceTree = "<group>"; };
+		47EA59B1270AE505007E441B /* WindowsParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowsParser.h; sourceTree = "<group>"; };
 		6B4CCB48EE35EF05C34AF82A /* Pods-TestApp-TestAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp-TestAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TestApp-TestAppUITests/Pods-TestApp-TestAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		714261D9EB03604C00F693BA /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		71B7024625A86CB83CEDB128 /* Pods_TestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +152,9 @@
 				47148AC525C1964300C04E3C /* LaunchScreen.storyboard */,
 				47148AC825C1964300C04E3C /* Info.plist */,
 				475880B126382B6D00B9363C /* AppTrackingPermission.swift */,
+				47EA59AF270AE4AE007E441B /* WindowsParser.m */,
+				47EA59AE270AE4AE007E441B /* TestApp-Bridging-Header.h */,
+				47EA59B1270AE505007E441B /* WindowsParser.h */,
 			);
 			path = TestApp;
 			sourceTree = "<group>";
@@ -256,6 +263,7 @@
 				TargetAttributes = {
 					47148AB625C1964200C04E3C = {
 						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1300;
 					};
 					47148ACC25C1964300C04E3C = {
 						CreatedOnToolsVersion = 11.7;
@@ -423,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47148ABF25C1964200C04E3C /* ViewController.swift in Sources */,
+				47EA59B0270AE4AE007E441B /* WindowsParser.m in Sources */,
 				47148ABB25C1964200C04E3C /* AppDelegate.swift in Sources */,
 				47148ABD25C1964200C04E3C /* SceneDelegate.swift in Sources */,
 				475880B226382B6D00B9363C /* AppTrackingPermission.swift in Sources */,
@@ -599,6 +608,7 @@
 			baseConfigurationReference = 714261D9EB03604C00F693BA /* Pods-TestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TestApp/TestApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -647,6 +657,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "TestApp/TestApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -657,6 +669,7 @@
 			baseConfigurationReference = AE84ADEF81ACAD28D1D390E5 /* Pods-TestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TestApp/TestApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -705,6 +718,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "TestApp/TestApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
