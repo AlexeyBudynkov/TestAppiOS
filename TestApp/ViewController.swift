@@ -16,6 +16,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textFiels: UITextField!
 
+    @IBOutlet weak var haoLabel: UILabel!
+    
+    @IBAction func buttonTap(_ sender: Any) {
+        haoLabel.text = "Test!"
+    }
+    
     var colorCounter = 0
 
     override func viewDidLoad() {
