@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,9 +16,7 @@
 		47148AC725C1964300C04E3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47148AC525C1964300C04E3C /* LaunchScreen.storyboard */; };
 		47148AD225C1964300C04E3C /* TestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148AD125C1964300C04E3C /* TestAppTests.swift */; };
 		47148ADD25C1964300C04E3C /* TestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148ADC25C1964300C04E3C /* TestAppUITests.swift */; };
-		47414BB027061A7300842479 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47414BAF27061A7300842479 /* PushKit.framework */; };
 		475880B226382B6D00B9363C /* AppTrackingPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475880B126382B6D00B9363C /* AppTrackingPermission.swift */; };
-		47ACCC83270625D700AE8A3E /* calabash.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47ACCC82270625D700AE8A3E /* calabash.xcframework */; };
 		47EA59B0270AE4AE007E441B /* WindowsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EA59AF270AE4AE007E441B /* WindowsParser.m */; };
 		95878B99CA568EFCD06334CD /* Pods_TestApp_TestAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D079FEE5CD179D5C2CAFE129 /* Pods_TestApp_TestAppUITests.framework */; };
 		A85EA1148DE0B7334114A5FA /* Pods_TestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B7024625A86CB83CEDB128 /* Pods_TestApp.framework */; };
@@ -59,10 +57,8 @@
 		47148AD825C1964300C04E3C /* TestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47148ADC25C1964300C04E3C /* TestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppUITests.swift; sourceTree = "<group>"; };
 		47148ADE25C1964300C04E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47414BAF27061A7300842479 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 		474CDDAD2632A9B100E920FC /* TestApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestApp.entitlements; sourceTree = "<group>"; };
 		475880B126382B6D00B9363C /* AppTrackingPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingPermission.swift; sourceTree = "<group>"; };
-		47ACCC82270625D700AE8A3E /* calabash.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = calabash.xcframework; sourceTree = "<group>"; };
 		47EA59AE270AE4AE007E441B /* TestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		47EA59AF270AE4AE007E441B /* WindowsParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowsParser.m; sourceTree = "<group>"; };
 		47EA59B1270AE505007E441B /* WindowsParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowsParser.h; sourceTree = "<group>"; };
@@ -81,7 +77,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A85EA1148DE0B7334114A5FA /* Pods_TestApp.framework in Frameworks */,
-				47414BB027061A7300842479 /* PushKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47ACCC83270625D700AE8A3E /* calabash.xcframework in Frameworks */,
 				3BEABA202496F7AA978A910A /* Pods_TestAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,8 +174,6 @@
 		F0BF551F8527F85DABBF46C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				47414BAF27061A7300842479 /* PushKit.framework */,
-				47ACCC82270625D700AE8A3E /* calabash.xcframework */,
 				470CE17525C307360079D73F /* CFNetwork.framework */,
 				71B7024625A86CB83CEDB128 /* Pods_TestApp.framework */,
 				D079FEE5CD179D5C2CAFE129 /* Pods_TestApp_TestAppUITests.framework */,

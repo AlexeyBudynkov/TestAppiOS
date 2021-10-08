@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AppTrackingTransparency
+//import AppTrackingTransparency
 
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -21,14 +21,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization { status in
-                print("status=\(status)")
-            }
-        } else {
-            print("iOS Not suppoeted by requestTrackingAuthorization")
-            // Fallback on earlier versions
-        }
+//        if #available(iOS 14, *) {
+////            ATTrackingManager.requestTrackingAuthorization { status in
+////                print("status=\(status)")
+////            }
+//            ATTrackingManager.requestTrackingAuthorization(completionHandler: {status in
+//                print("status=\(status)")
+//            })
+//        } else {
+//            print("iOS Not suppoeted by requestTrackingAuthorization")
+//            // Fallback on earlier versions
+//        }
         
 //        DispatchQueue.main.async {
 //            let statusBar = UIView(frame: (UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame)!)

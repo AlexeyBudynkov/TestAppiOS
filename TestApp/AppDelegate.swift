@@ -14,6 +14,8 @@ import AppCenterCrashes
 
 import UIKit
 
+import AppTrackingTransparency
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -22,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         
         AppCenter.logLevel = .verbose
          AppCenter.start(withAppSecret: "f57108c0-c3c6-4648-8ffe-b784c4ffd347", services:[

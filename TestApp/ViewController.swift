@@ -20,6 +20,18 @@ class ViewController: UIViewController {
     
     @IBAction func buttonTap(_ sender: Any) {
         haoLabel.text = "Test!"
+        if #available(iOS 14, *) {
+//            ATTrackingManager.requestTrackingAuthorization { status in
+//                print("status=\(status)")
+//            }
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: {status in
+                print("status=\(status)")
+            })
+        } else {
+            print("iOS Not suppoeted by requestTrackingAuthorization")
+            // Fallback on earlier versions
+        }
+        
     }
     
     var colorCounter = 0
