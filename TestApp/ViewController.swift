@@ -54,8 +54,46 @@ class ViewController: UIViewController {
         
         locationManager.delegate = self
         
+        
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+            
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+            
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeUp.direction = .up
+        self.view.addGestureRecognizer(swipeUp)
+            
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
+        
     }
 
+    func alert(message:String){
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+       if gesture.direction == .right {
+           alert(message: "Swipe Right")
+       }
+       else if gesture.direction == .left {
+           alert(message: "Swipe Left")
+       }
+       else if gesture.direction == .up {
+           alert(message: "Swipe Up")
+       }
+       else if gesture.direction == .down {
+           alert(message: "Swipe Down")
+       }
+    }
 }
 
 //location notification
@@ -136,7 +174,6 @@ extension ViewController: CLLocationManagerDelegate {
 
 //draw a point on a screen on tap
 extension ViewController {
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //WindowsParser.rotate()
