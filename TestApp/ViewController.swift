@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         
         locationManager.delegate = self
         
-        
+        NSLog("BOUNDS=\(UIScreen.main.bounds.size)")
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeLeft.direction = .left
