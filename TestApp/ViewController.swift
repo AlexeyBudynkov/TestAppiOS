@@ -83,6 +83,22 @@ class ViewController: UIViewController, CBCentralManagerDelegate {
         textFiels.isSecureTextEntry = true
         textFiels.text = "hao!!!"
         
+
+        
+        
+        //ask for remote notifications
+        UIApplication.shared.registerForRemoteNotifications()
+        
+        //ask for notifications
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            
+            if let error = error {
+                // Handle the error here.
+            }
+            
+            // Enable or disable features based on the authorization.
+        }
         
         locationManager.delegate = self
         
