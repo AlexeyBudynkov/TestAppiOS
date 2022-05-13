@@ -10,7 +10,34 @@ import UIKit
 import AppTrackingTransparency
 import CoreLocation
 
-class ViewController: UIViewController {
+import CoreBluetooth
+
+class ViewController: UIViewController, CBCentralManagerDelegate {
+    
+    //bluetooth permission
+    var manager:CBCentralManager!
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        switch central.state {
+          case .unknown:
+            print("central.state is .unknown")
+          case .resetting:
+            print("central.state is .resetting")
+          case .unsupported:
+            print("central.state is .unsupported")
+          case .unauthorized:
+            print("central.state is .unauthorized")
+          case .poweredOff:
+            print("central.state is .poweredOff")
+          case .poweredOn:
+            print("central.state is .poweredOn")
+           // manager.scanForPeripherals(withServices: nil)
+        }
+    }
+
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        print(peripheral)
+    }
+    ////
     
     lazy var locationManager = CLLocationManager()
 
@@ -47,6 +74,11 @@ class ViewController: UIViewController {
 //        if let url = URL(string: "tg://msg?text=Mi_mensaje&to=+1555999") {
 //            UIApplication.shared.open(url)
 //        }
+        
+        //bluetooth permission
+        manager = CBCentralManager(delegate: self,
+                                       queue: nil)
+        
 
         textFiels.isSecureTextEntry = true
         textFiels.text = "hao!!!"
@@ -56,6 +88,10 @@ class ViewController: UIViewController {
         
         NSLog("BOUNDS=\(UIScreen.main.bounds.size)")
         
+        NSLog("size=\(UIScreen.main.currentMode!.size)")
+        NSLog("scale=\(UIScreen.main.scale)")
+ 
+
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeLeft.direction = .left
         self.view.addGestureRecognizer(swipeLeft)
