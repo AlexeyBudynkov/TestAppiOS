@@ -653,7 +653,7 @@
 					"-framework",
 					"\"CFNetwork\"",
 					"-force_load",
-					"$(PROJECT_DIR)/calabash.xcframework/ios-arm64_armv7/libcalabash.a",
+					"$(PROJECT_DIR)/calabash.xcframework/ios-arm64/libcalabash.a",
 					"-framework",
 					"\"AppCenter\"",
 					"-framework",
@@ -702,7 +702,7 @@
 					"-weak_framework",
 					"\"SafariServices\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.myCompany.TestApp10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myCompany.TestApp11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
@@ -771,7 +771,7 @@
 					"-framework",
 					"\"CFNetwork\"",
 					"-force_load",
-					"$(PROJECT_DIR)/calabash.xcframework/ios-arm64_armv7/libcalabash.a",
+					"$(PROJECT_DIR)/calabash.xcframework/ios-arm64/libcalabash.a",
 					"-framework",
 					"\"AppCenter\"",
 					"-framework",
@@ -820,7 +820,7 @@
 					"-weak_framework",
 					"\"SafariServices\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.myCompany.TestApp10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myCompany.TestApp11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
