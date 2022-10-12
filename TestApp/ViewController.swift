@@ -230,6 +230,14 @@ extension ViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //WindowsParser.rotate()
 
+        let temp = LPKeyboardLanguageRoute()
+        
+        let keyboard = temp.findKeyboardWindow()
+        
+        if keyboard == nil{
+            print("No visible keyboard")
+        }
+        
         ////query to calabash
         let arguments = "{\"query\":\"* marked:'hao!!!'\",\"operation\":{\"method_name\":\"query\",\"arguments\":[]}}"
         let data = LPJSONUtils.deserializeDictionary(arguments)

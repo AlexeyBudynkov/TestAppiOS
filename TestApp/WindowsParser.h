@@ -100,3 +100,38 @@ extern CGFloat LP_MIN_FLOAT;
 - (id) performWithTarget:(id) target error:(NSError **) error;
 
 @end
+
+
+//keyboard visibility
+
+@class LPHTTPConnection;
+
+@protocol LPRoute <NSObject>
+
+@optional
+- (void) setParameters:(NSDictionary *) parameters;
+
+- (void) setConnection:(LPHTTPConnection *) connection;
+
+- (BOOL) supportsMethod:(NSString *) method atPath:(NSString *) path;
+
+- (NSDictionary *) JSONResponseForMethod:(NSString *) method
+                                     URI:(NSString *) path
+                                    data:(NSDictionary *) data;
+
+@end
+
+
+@interface LPKeyboardLanguageRoute : NSObject <LPRoute>
+
+@end
+
+
+@interface LPKeyboardLanguageRoute (LPXCTEST)
+
+- (BOOL) canHandlePostForPath:(NSArray *) path;
+- (UIWindow *) findKeyboardWindow;
+- (UIView *) findKeyboardViewWithWindow:(UIWindow *) window;
+- (NSString *) primaryLanguageFromKeyboardView:(UIView *) keyboardView;
+
+@end
